@@ -1,0 +1,8 @@
+prefix=/home/johanth/waymaster_v1/devel
+
+Name: waymaster_v1
+Description: Description of waymaster_v1
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
