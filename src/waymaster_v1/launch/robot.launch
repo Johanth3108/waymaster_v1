@@ -7,7 +7,15 @@
     </node> -->
     
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <param name="use_sim_time" value="true"/>
+    
+    
+    <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" output="screen"/> -->
 
-    <!-- <node name="rviz" pkg="rviz" type="rviz" output="screen"/> -->
-
+    <node name="rviz" pkg="rviz" type="rviz" output="screen"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">        
+    </include>
+    
+    <node name="gazebo_ros" pkg="gazebo_ros" type="spawn_model" args="-file /home/johanth/waymaster_v1/src/waymaster_v1/description/robotv1.urdf -urdf -x 0 -y 0 -z 0 -model waymaster" output="screen"/>
+    
 </launch>
