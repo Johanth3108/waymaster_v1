@@ -1,0 +1,8 @@
+prefix=/home/johanth/waymaster_v1/install
+
+Name: vidsrv
+Description: Description of vidsrv
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

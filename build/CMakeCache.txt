@@ -468,6 +468,24 @@ freenect_stack_BINARY_DIR:STATIC=/home/johanth/waymaster_v1/build/freenect_stack
 //Value Computed by CMake
 freenect_stack_SOURCE_DIR:STATIC=/home/johanth/waymaster_v1/src/freenect_stack/freenect_stack
 
+//The directory containing a CMake configuration file for gencpp.
+gencpp_DIR:PATH=/opt/ros/noetic/share/gencpp/cmake
+
+//The directory containing a CMake configuration file for geneus.
+geneus_DIR:PATH=/opt/ros/noetic/share/geneus/cmake
+
+//The directory containing a CMake configuration file for genlisp.
+genlisp_DIR:PATH=/opt/ros/noetic/share/genlisp/cmake
+
+//The directory containing a CMake configuration file for genmsg.
+genmsg_DIR:PATH=/opt/ros/noetic/share/genmsg/cmake
+
+//The directory containing a CMake configuration file for gennodejs.
+gennodejs_DIR:PATH=/opt/ros/noetic/share/gennodejs/cmake
+
+//The directory containing a CMake configuration file for genpy.
+genpy_DIR:PATH=/opt/ros/noetic/share/genpy/cmake
+
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
 
@@ -526,11 +544,20 @@ lib:FILEPATH=/opt/ros/noetic/lib/libxmlrpcpp.so
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
 
+//The directory containing a CMake configuration file for message_generation.
+message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
+
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
+
+//Value Computed by CMake
+pkg_ros_motor_BINARY_DIR:STATIC=/home/johanth/waymaster_v1/build/Control-of-motor-with-ROS/pkg_ros_motor
+
+//Value Computed by CMake
+pkg_ros_motor_SOURCE_DIR:STATIC=/home/johanth/waymaster_v1/src/Control-of-motor-with-ROS/pkg_ros_motor
 
 //Path to a library.
 pkgcfg_lib_LIBFREENECT_freenect:FILEPATH=/usr/local/lib/libfreenect.so
@@ -576,6 +603,12 @@ smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
+
+//Value Computed by CMake
+vidsrv_BINARY_DIR:STATIC=/home/johanth/waymaster_v1/build/vidsrv
+
+//Value Computed by CMake
+vidsrv_SOURCE_DIR:STATIC=/home/johanth/waymaster_v1/src/vidsrv
 
 //Value Computed by CMake
 waymaster_v1_BINARY_DIR:STATIC=/home/johanth/waymaster_v1/build/waymaster_v1
@@ -736,7 +769,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
