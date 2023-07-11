@@ -58,6 +58,7 @@ all: freenect_stack/freenect_launch/all
 all: freenect_stack/freenect_stack/all
 all: Control-of-motor-with-ROS/pkg_ros_motor/all
 all: freenect_stack/freenect_camera/all
+all: differential-drive/all
 all: vidsrv/all
 all: waymaster_v1/all
 
@@ -69,6 +70,7 @@ preinstall: freenect_stack/freenect_launch/preinstall
 preinstall: freenect_stack/freenect_stack/preinstall
 preinstall: Control-of-motor-with-ROS/pkg_ros_motor/preinstall
 preinstall: freenect_stack/freenect_camera/preinstall
+preinstall: differential-drive/preinstall
 preinstall: vidsrv/preinstall
 preinstall: waymaster_v1/preinstall
 
@@ -85,6 +87,7 @@ clean: freenect_stack/freenect_launch/clean
 clean: freenect_stack/freenect_stack/clean
 clean: Control-of-motor-with-ROS/pkg_ros_motor/clean
 clean: freenect_stack/freenect_camera/clean
+clean: differential-drive/clean
 clean: vidsrv/clean
 clean: waymaster_v1/clean
 
@@ -132,6 +135,24 @@ Control-of-motor-with-ROS/pkg_ros_motor/clean: Control-of-motor-with-ROS/pkg_ros
 Control-of-motor-with-ROS/pkg_ros_motor/clean: Control-of-motor-with-ROS/pkg_ros_motor/CMakeFiles/pkg_ros_motor_geneus.dir/clean
 
 .PHONY : Control-of-motor-with-ROS/pkg_ros_motor/clean
+
+#=============================================================================
+# Directory level rules for directory differential-drive
+
+# Recursive "all" directory target.
+differential-drive/all:
+
+.PHONY : differential-drive/all
+
+# Recursive "preinstall" directory target.
+differential-drive/preinstall:
+
+.PHONY : differential-drive/preinstall
+
+# Recursive "clean" directory target.
+differential-drive/clean:
+
+.PHONY : differential-drive/clean
 
 #=============================================================================
 # Directory level rules for directory freenect_stack/freenect_camera

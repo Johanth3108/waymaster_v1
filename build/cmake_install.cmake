@@ -135,6 +135,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/johanth/waymaster_v1/build/freenect_stack/freenect_stack/cmake_install.cmake")
   include("/home/johanth/waymaster_v1/build/Control-of-motor-with-ROS/pkg_ros_motor/cmake_install.cmake")
   include("/home/johanth/waymaster_v1/build/freenect_stack/freenect_camera/cmake_install.cmake")
+  include("/home/johanth/waymaster_v1/build/differential-drive/cmake_install.cmake")
   include("/home/johanth/waymaster_v1/build/vidsrv/cmake_install.cmake")
   include("/home/johanth/waymaster_v1/build/waymaster_v1/cmake_install.cmake")
 

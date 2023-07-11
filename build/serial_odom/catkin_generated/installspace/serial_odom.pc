@@ -1,0 +1,8 @@
+prefix=/home/johanth/waymaster_v1/install
+
+Name: serial_odom
+Description: Description of serial_odom
+Version: 0.5.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

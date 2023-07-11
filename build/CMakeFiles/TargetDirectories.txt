@@ -124,6 +124,13 @@
 /home/johanth/waymaster_v1/build/freenect_stack/freenect_camera/CMakeFiles/bond_generate_messages_cpp.dir
 /home/johanth/waymaster_v1/build/freenect_stack/freenect_camera/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/johanth/waymaster_v1/build/freenect_stack/freenect_camera/CMakeFiles/bond_generate_messages_lisp.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/install/strip.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/install/local.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/install.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/list_install_components.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/rebuild_cache.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/edit_cache.dir
+/home/johanth/waymaster_v1/build/differential-drive/CMakeFiles/test.dir
 /home/johanth/waymaster_v1/build/vidsrv/CMakeFiles/install/strip.dir
 /home/johanth/waymaster_v1/build/vidsrv/CMakeFiles/install/local.dir
 /home/johanth/waymaster_v1/build/vidsrv/CMakeFiles/install.dir
