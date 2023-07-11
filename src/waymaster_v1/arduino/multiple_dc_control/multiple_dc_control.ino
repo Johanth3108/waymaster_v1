@@ -75,6 +75,9 @@ SimplePID pid[NMOTORS];
 float right = 0.0;
 float left = 0.0;
 
+int op_right = 0;
+int op_left = 0;
+
 float target_f[] = {0.0,0.0};
 long target[] = {0,0};
 
@@ -131,7 +134,8 @@ void setup() {
 
     pid[k].setParams(9.5,0.52,0,255);
   }
-  
+
+  FastLED.addLeds<NEOPIXEL, 14>(leds, NUM_LEDS);
   attachInterrupt(digitalPinToInterrupt(enca[0]),readEncoder<0>,RISING);
   attachInterrupt(digitalPinToInterrupt(enca[1]),readEncoder<1>,RISING);
   
@@ -148,6 +152,39 @@ void loop() {
 //  int target[NMOTORS];
 //  target[0] = 1200*sin(prevT/1e6);
 //  target[1] = -1200*sin(prevT/1e6);
+
+  if(right>0){
+    leds[0] = CRGB::Green; FastLED.show();
+    leds[1] = CRGB::Green; FastLED.show();
+    leds[2] = CRGB::Green; FastLED.show();
+  }
+  else if(right<0){
+    leds[4] = CRGB(255,255,0); FastLED.show();
+    leds[5] = CRGB(255,255,0); FastLED.show();
+    leds[6] = CRGB(255,255,0); FastLED.show();
+  }
+  else if(right==0){
+    leds[0] = CRGB::Red; FastLED.show();
+    leds[1] = CRGB::Red; FastLED.show();
+    leds[2] = CRGB::Red; FastLED.show();
+  }
+
+  
+  if(left>0){
+    leds[4] = CRGB::Green; FastLED.show();
+    leds[5] = CRGB::Green; FastLED.show();
+    leds[6] = CRGB::Green; FastLED.show();
+  }
+  else if(left<0){
+    leds[0] = CRGB(255,255,0); FastLED.show();
+    leds[1] = CRGB(255,255,0); FastLED.show();
+    leds[2] = CRGB(255,255,0); FastLED.show();
+  }
+  else if(left==0){
+    leds[4] = CRGB::Red; FastLED.show();
+    leds[5] = CRGB::Red; FastLED.show();
+    leds[6] = CRGB::Red; FastLED.show();
+  }
 
   // time difference
   long currT = micros();
@@ -184,10 +221,10 @@ void loop() {
 //  }
 //  Serial.println();
 
-  right_w.data = right;
+  right_w.data = op_right;
   right_wheel_p.publish( &right_w );
 
-  left_w.data = left;
+  left_w.data = op_left;
   left_wheel_p.publish( &left_w );
 
   nh.spinOnce();
@@ -218,5 +255,12 @@ void readEncoder(){
   }
   else{
     posi[j]--;
+  }
+  
+  if(j==0){
+    op_right=posi[j];
+  }
+  else{
+    op_left=posi[j];
   }
 }
