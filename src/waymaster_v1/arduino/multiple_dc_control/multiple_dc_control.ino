@@ -1,7 +1,8 @@
 #include <ros.h>
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/Float64.h>
+#include <std_msgs/Int16.h>
 #include <FastLED.h>
+#include <geometry_msgs/Vector3Stamped.h>
 
 // A class to compute the control signal
 class SimplePID{
@@ -81,6 +82,12 @@ int op_left = 0;
 float target_f[] = {0.0,0.0};
 long target[] = {0,0};
 
+int encPrevr = 0;
+int encPrevl = 0;
+
+double right_speed = 0.0;
+double left_speed = 0.0;
+
 void setTarget(float t, float deltat, int mot_num){
   float positionChange[2] = {0.2, 0.2};
   float pulsesPerTurn = 11*18.75;
@@ -117,9 +124,11 @@ void messageCb( const geometry_msgs::Twist &cmd_vel){
 
 ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
 
-std_msgs::Float64 right_w;
+//geometry_msgs::Vector3Stamped speed_msg;                                //create a "speed_msg" ROS message
+//ros::Publisher speed_pub("speed", &speed_msg);
+std_msgs::Int16 right_w;
 ros::Publisher right_wheel_p("right_wheel", &right_w);
-std_msgs::Float64 left_w;
+std_msgs::Int16 left_w;
 ros::Publisher left_wheel_p("left_wheel", &left_w);
 
 void setup() {
@@ -221,15 +230,34 @@ void loop() {
 //  }
 //  Serial.println();
 
+//  int encDiffr = op_right-encPrevr;
+//  int encDiffl = op_left-encPrevl;
+//  
+//  right_speed = encDiffr/4.290;
+//  left_speed = encDiffl/4.290;
+//  double theta = (encDiffr-encDiffl)/0.21;
+//  
+//  encPrevr = op_right;
+//  encPrevl = op_left;
+
   right_w.data = op_right;
   right_wheel_p.publish( &right_w );
 
   left_w.data = op_left;
   left_wheel_p.publish( &left_w );
-
+//  publishSpeed(10, right_speed, left_speed, theta);
   nh.spinOnce();
   delay(1);
 }
+
+//void publishSpeed(double time, double rspeed, double lspeed, double theta) {
+//  speed_msg.header.stamp = nh.now();      //timestamp for odometry data
+//  speed_msg.vector.x = rspeed;    //left wheel speed (in m/s)
+//  speed_msg.vector.y = lspeed;   //right wheel speed (in m/s)
+//  speed_msg.vector.z = theta;         //looptime, should be the same as specified in LOOPTIME (in s)
+//  speed_pub.publish(&speed_msg);
+////  nh.loginfo("Publishing odometry");
+//}
 
 void setMotor(int dir, int pwmVal, int pwm, int in1, int in2){
   analogWrite(pwm,pwmVal);
